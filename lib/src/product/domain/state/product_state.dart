@@ -1,5 +1,5 @@
-import 'package:fast_fruit/src/product/interactor/exceptions/product_exception.dart';
-import 'package:fast_fruit/src/product/interactor/models/product_model.dart';
+import 'package:fast_fruit/src/product/domain/exceptions/product_exception.dart';
+import 'package:fast_fruit/src/product/domain/models/product_model.dart';
 
 sealed class ProductState {
   final List<ProductModel> products;

@@ -1,4 +1,4 @@
-import 'package:fast_fruit/src/product/interactor/models/product_model.dart';
+import 'package:fast_fruit/src/product/domain/models/product_model.dart';
 import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
@@ -19,19 +19,6 @@ class ProductCard extends StatelessWidget {
         elevation: 7,
         child: Column(
           children: [
-            // Expanded(
-            //   child: ClipRRect(
-            //     borderRadius: const BorderRadius.only(
-            //       topLeft: Radius.circular(12),
-            //       topRight: Radius.circular(12),
-            //     ),
-            //     child: Image.network(
-            //       model.image,
-            //       width: double.infinity,
-            //       fit: BoxFit.cover,
-            //     ),
-            //   ),
-            // ),
             Container(
               height: 45,
               width: double.infinity,

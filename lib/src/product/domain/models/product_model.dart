@@ -1,4 +1,4 @@
-import 'package:fast_fruit/src/product/interactor/models/product_variant_model.dart';
+import 'package:fast_fruit/src/product/domain/models/product_variant_model.dart';
 
 class ProductModel {
   final String id;

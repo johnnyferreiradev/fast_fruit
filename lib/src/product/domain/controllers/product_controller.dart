@@ -1,5 +1,5 @@
-import 'package:fast_fruit/src/product/interactor/services/product_service.dart';
-import 'package:fast_fruit/src/product/interactor/state/product_state.dart';
+import 'package:fast_fruit/src/product/domain/services/product_service.dart';
+import 'package:fast_fruit/src/product/domain/state/product_state.dart';
 import 'package:flutter/material.dart';
 
 class ProductController extends ChangeNotifier {

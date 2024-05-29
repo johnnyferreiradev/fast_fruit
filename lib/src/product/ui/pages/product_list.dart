@@ -1,4 +1,4 @@
-import 'package:fast_fruit/src/product/interactor/controllers/product_controller.dart';
+import 'package:fast_fruit/src/product/domain/controllers/product_controller.dart';
 import 'package:fast_fruit/src/product/ui/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -11,6 +11,21 @@ class ProductList extends StatefulWidget {
 }
 
 class _ProductListState extends State<ProductList> {
+  @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      context.read<ProductController>().fetchProducts();
+    });
+  }
+
+  @override
+  void dispose() {
+    context.read<ProductController>();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final controller = context.watch<ProductController>();
@@ -39,6 +54,10 @@ class _ProductListState extends State<ProductList> {
             const Align(
               alignment: Alignment.topCenter,
               child: LinearProgressIndicator(),
+            ),
+          if (!state.loading && state.products.isEmpty)
+            const Center(
+              child: Text('Não há produtos.'),
             ),
         ],
       ),
