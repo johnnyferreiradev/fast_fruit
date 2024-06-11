@@ -17,4 +17,12 @@ class ProductController extends ChangeNotifier {
     _state = await service.fetchProducts(state);
     notifyListeners();
   }
+
+  Future<void> searchProductsByName(String search) async {
+    _state = state.setLoading();
+    notifyListeners();
+
+    _state = await service.searchProductsByName(state, search);
+    notifyListeners();
+  }
 }
